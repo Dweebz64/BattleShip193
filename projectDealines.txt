@@ -1,0 +1,8 @@
+Project Deadlines 
+
+6/14 Foundation for GUI developed
+6/18 Issues Created for Each Group Memeber should be resolved and submitted for M06
+6/22 Application functionality complete
+6/25 Wiki FAQ and readme File completed for documentation M07
+6/27 Last min debugginf and fixing 
+6/30 Deploy functioning app with pipeline
