@@ -13,11 +13,13 @@ root = Tk()
 root.title("BattleShip 193")
 root.geometry("581x350")
 
+def button_clicked(): 
 
 
+    button_1 = tk.Button(root, text="Click Me", command=button_clicked)
+    button_1.pack()
 
-
-
+button_1.invoke()
 
 
 
