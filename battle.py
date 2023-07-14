@@ -165,3 +165,6 @@ moves_msg.grid(row=9, column=0)
 newGame()
 root.mainloop()
 
+<<<<<<< HEAD
+=======
+>>>>>>> 11ac54b1cfeacd7c14e109841613dbdda3d89ffa
