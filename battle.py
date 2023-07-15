@@ -17,34 +17,41 @@ root.geometry("320x350")
 
 
 #Varibles
-winGame = False
-moveCount = 0
-hits = 0
-playMsg = "Click a button!"     #Will show hit or miss at end?
 pad = 10
+playMsg = StringVar()
+moveMsg = StringVar()
 
 
 #Clicky
 def button_click(b):
+    global moveCount, hits, playMsg
+    
     if b["text"] == "  ":
-        #moveCount +=1
-        if b in ship:
+        moveCount +=1
+        moveMsg.set("Moves: " + str(moveCount))
+        if b in ships:
             b["text"]= "O"
-            #hits +=1
-            playMsg = "Hit!"
+            hits +=1
+            playMsg.set("Hit!")
             checkWin()
         else:
             b["text"]= "X"
-            playMsg = "Miss!"
+            playMsg.set("Miss!")
 
 
 #Will assign values for ships, find 5 random buttons
 def newGame():
-    pass
+    global winGame, moveCount, hits, playMsg, ships
 
+    winGame = False
+    moveCount = 0
+    hits = 0
+    playMsg.set("Click a button to play!")
+    moveMsg.set("Moves: " + str(moveCount))
+    spaces = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25]
+    ships = random.sample(spaces, 5)
 
-
-
+    
 
 
 def checkWin():
@@ -59,57 +66,57 @@ def checkWin():
 
 
 #Define GUI Elements
-frame = Frame(root)
-label_a = Label(root, text="A", padx=pad)
-label_b = Label(root, text="B", padx=pad)
-label_c = Label(root, text="C", padx=pad)
-label_d = Label(root, text="D", padx=pad)
-label_e = Label(root, text="E", padx=pad)
+board_frame = LabelFrame(root, text="Battleship 193")
+label_a = Label(board_frame, text="A", padx=pad)
+label_b = Label(board_frame, text="B", padx=pad)
+label_c = Label(board_frame, text="C", padx=pad)
+label_d = Label(board_frame, text="D", padx=pad)
+label_e = Label(board_frame, text="E", padx=pad)
 
-label_1 = Label(root, text="1")
-label_2 = Label(root, text="2")
-label_3 = Label(root, text="3")
-label_4 = Label(root, text="4")
-label_5 = Label(root, text="5")
+label_1 = Label(board_frame, text="1")
+label_2 = Label(board_frame, text="2")
+label_3 = Label(board_frame, text="3")
+label_4 = Label(board_frame, text="4")
+label_5 = Label(board_frame, text="5")
 
-label_msg = Label(root, text= playMsg)
+b1 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b1))
+b2 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b2))
+b3 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b3))
+b4 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b4))
+b5 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b5))
 
-b1 = Button(root, text="  ", padx=10, command=lambda: button_click(b1))
-b2 = Button(root, text="  ", padx=10, command=lambda: button_click(b2))
-b3 = Button(root, text="  ", padx=10, command=lambda: button_click(b3))
-b4 = Button(root, text="  ", padx=10, command=lambda: button_click(b4))
-b5 = Button(root, text="  ", padx=10, command=lambda: button_click(b5))
+b6 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b6))
+b7 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b7))
+b8 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b8))
+b9 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b9))
+b10 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b10))
 
-b6 = Button(root, text="  ", padx=10, command=lambda: button_click(b6))
-b7 = Button(root, text="  ", padx=10, command=lambda: button_click(b7))
-b8 = Button(root, text="  ", padx=10, command=lambda: button_click(b8))
-b9 = Button(root, text="  ", padx=10, command=lambda: button_click(b9))
-b10 = Button(root, text="  ", padx=10, command=lambda: button_click(b10))
+b11 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b11))
+b12 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b12))
+b13 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b13))
+b14 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b14))
+b15 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b15))
 
-b11 = Button(root, text="  ", padx=10, command=lambda: button_click(b11))
-b12 = Button(root, text="  ", padx=10, command=lambda: button_click(b12))
-b13 = Button(root, text="  ", padx=10, command=lambda: button_click(b13))
-b14 = Button(root, text="  ", padx=10, command=lambda: button_click(b14))
-b15 = Button(root, text="  ", padx=10, command=lambda: button_click(b15))
+b16 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b16))
+b17 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b17))
+b18 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b18))
+b19 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b19))
+b20 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b20))
 
-b16 = Button(root, text="  ", padx=10, command=lambda: button_click(b16))
-b17 = Button(root, text="  ", padx=10, command=lambda: button_click(b17))
-b18 = Button(root, text="  ", padx=10, command=lambda: button_click(b18))
-b19 = Button(root, text="  ", padx=10, command=lambda: button_click(b19))
-b20 = Button(root, text="  ", padx=10, command=lambda: button_click(b20))
-
-b21 = Button(root, text="  ", padx=10, command=lambda: button_click(b21))
-b22 = Button(root, text="  ", padx=10, command=lambda: button_click(b22))
-b23 = Button(root, text="  ", padx=10, command=lambda: button_click(b23))
-b24 = Button(root, text="  ", padx=10, command=lambda: button_click(b24))
-b25 = Button(root, text="  ", padx=10, command=lambda: button_click(b25))
+b21 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b21))
+b22 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b22))
+b23 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b23))
+b24 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b24))
+b25 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b25))
 
 
-ship =[b1,b2,b10]
+msg_frame = Frame(root)
+label_msg = Label(msg_frame, textvariable=playMsg)
+moves_msg = Label(msg_frame, textvariable=moveMsg)
 
 
 #Display GUI Elements
-frame.grid(row=0, column=0)
+board_frame.grid(row=0, column=0)
 label_a.grid(row=1, column=1)
 label_b.grid(row=1, column=2)
 label_c.grid(row=1, column=3)
@@ -121,8 +128,6 @@ label_2.grid(row=3, column=0)
 label_3.grid(row=4, column=0)
 label_4.grid(row=5, column=0)
 label_5.grid(row=6, column=0)
-
-    #label_msg.grid(row=7, column=3, columnspan=2)      Needs to go into different frame container
 
 b1.grid(row=2, column=1)
 b2.grid(row=2, column=2)
@@ -154,8 +159,12 @@ b23.grid(row=6, column=3)
 b24.grid(row=6, column=4)
 b25.grid(row=6, column=5)
 
+msg_frame.grid(row=7, column=0)
+label_msg.grid(row=8, column=0)
+moves_msg.grid(row=9, column=0)
 
 
+newGame()
 root.mainloop()
 
 
