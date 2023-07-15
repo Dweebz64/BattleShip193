@@ -18,7 +18,7 @@ root.geometry("320x350")
 
 #Varibles
 pad = 10
-playMsg = "nothing yet" #Label wont pull from NewGame or update after button_click triggers
+playMsg = StringVar()
 moveCount = 0           #Added these here so that it will run
 
 #Clicky
@@ -30,11 +30,11 @@ def button_click(b):
         if b in ships:
             b["text"]= "O"
             hits +=1
-            playMsg = "Hit!"
+            playMsg.set("Hit!")
             checkWin()
         else:
             b["text"]= "X"
-            playMsg = "Miss!"
+            playMsg.set("Miss!")
 
 
 #Will assign values for ships, find 5 random buttons
@@ -44,7 +44,7 @@ def newGame():
     winGame = False
     moveCount = 0
     hits = 0
-    playMsg = "Click a button to play!"
+    playMsg.set("Click a button to play!")
     spaces = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25]
     ships = random.sample(spaces, 5)
 
@@ -107,9 +107,8 @@ b24 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b24))
 b25 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b25))
 
 
-
 msg_frame = Frame(root)
-label_msg = Label(msg_frame, text=playMsg)
+label_msg = Label(msg_frame, textvariable=playMsg)
 moves_msg = Label(msg_frame, text=("Moves: "+ str(moveCount)))
 
 
