@@ -19,7 +19,8 @@ root.geometry("320x350")
 #Varibles
 pad = 10
 playMsg = StringVar()
-moveCount = 0           #Added these here so that it will run
+moveMsg = StringVar()
+
 
 #Clicky
 def button_click(b):
@@ -27,6 +28,7 @@ def button_click(b):
     
     if b["text"] == "  ":
         moveCount +=1
+        moveMsg.set("Moves: " + str(moveCount))
         if b in ships:
             b["text"]= "O"
             hits +=1
@@ -45,6 +47,7 @@ def newGame():
     moveCount = 0
     hits = 0
     playMsg.set("Click a button to play!")
+    moveMsg.set("Moves: " + str(moveCount))
     spaces = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25]
     ships = random.sample(spaces, 5)
 
@@ -109,7 +112,7 @@ b25 = Button(board_frame, text="  ", padx=10, command=lambda: button_click(b25))
 
 msg_frame = Frame(root)
 label_msg = Label(msg_frame, textvariable=playMsg)
-moves_msg = Label(msg_frame, text=("Moves: "+ str(moveCount)))
+moves_msg = Label(msg_frame, textvariable=moveMsg)
 
 
 #Display GUI Elements
