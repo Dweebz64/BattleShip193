@@ -1,1 +1,3 @@
-#creating an issue in the battleship app
+#creating an issue in the battleship,
+
+#fixed the issue 
