@@ -12,3 +12,7 @@ Here is my text, there is my branch
 When I try to merge, hear me shout
 "<<<<<<< HEAD"
 Clean up some text and recommit!
+
+
+Hello it is me
+The conflictador!
