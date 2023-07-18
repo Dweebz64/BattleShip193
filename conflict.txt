@@ -7,7 +7,7 @@ This is my third change to this file.
 If you see this Tia, please add to the gitignore.
 
 
-I'm a big conflict, short and stout
+I'm a bigs conflict, short and stout
 Here is my text, there is my branch
 When I try to merge, hear me shout
 "<<<<<<< HEAD"
