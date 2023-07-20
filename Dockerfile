@@ -10,7 +10,7 @@ COPY ./battle.py .
 #COPY ./requirements.txt .
 #first dot is the copying from the current dir, then it will pipeline from local to virtual machine 
 
-RUN pip install -r requirements.txt  
+#RUN pip install -r requirements.txt  
 #install everything in the manifest 
 
 #run pip freexzd
