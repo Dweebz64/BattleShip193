@@ -5,3 +5,14 @@ This is my third change to this file.
 
 
 If you see this Tia, please add to the gitignore.
+
+
+I'm a little conflict, short and stout
+Here is my text, there is my branch
+When I try to merge, hear me shout
+"<<<<<<< HEAD"
+Clean up some text and recommit!
+
+
+Hello it is me
+The conflictador!
